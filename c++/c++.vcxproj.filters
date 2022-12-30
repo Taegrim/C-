@@ -60,6 +60,12 @@
     <ClCompile Include="4-3-3.cpp">
       <Filter>소스 파일\4.</Filter>
     </ClCompile>
+    <ClCompile Include="4-5.cpp">
+      <Filter>소스 파일\4.</Filter>
+    </ClCompile>
+    <ClCompile Include="4-6.cpp">
+      <Filter>소스 파일\4.</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
