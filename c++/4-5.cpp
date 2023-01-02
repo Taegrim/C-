@@ -28,7 +28,7 @@ public:
 
 	char At(int i) const;
 
-	friend std::ostream& operator<<(std::ostream& os, const MyString str);
+	friend std::ostream& operator<<(std::ostream& os, const MyString& str);
 	
 private:
 	char* string_content;
@@ -36,7 +36,7 @@ private:
 	int memory_capacity;
 };
 
-std::ostream& operator<<(std::ostream& os, const MyString str)
+std::ostream& operator<<(std::ostream& os, const MyString& str)
 {
 	for (int i = 0; i < str.string_length; ++i)
 		os << str.string_content[i];
