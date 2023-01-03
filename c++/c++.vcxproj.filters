@@ -69,10 +69,19 @@
     <ClCompile Include="4-6.cpp">
       <Filter>소스 파일\4.</Filter>
     </ClCompile>
-    <ClCompile Include="5-1.cpp">
+    <ClCompile Include="5-1-1.cpp">
       <Filter>소스 파일\5.</Filter>
     </ClCompile>
     <ClCompile Include="5-1-2.cpp">
+      <Filter>소스 파일\5.</Filter>
+    </ClCompile>
+    <ClCompile Include="5-2-1.cpp">
+      <Filter>소스 파일\5.</Filter>
+    </ClCompile>
+    <ClCompile Include="5-2-2.cpp">
+      <Filter>소스 파일\5.</Filter>
+    </ClCompile>
+    <ClCompile Include="5-2-3.cpp">
       <Filter>소스 파일\5.</Filter>
     </ClCompile>
   </ItemGroup>
