@@ -1,8 +1,8 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 
 class Base {
 public:
-	Base() : parent_s{ "±â¹Ý" } { std::cout << "±â¹Ý Å¬·¡½º\n"; }
+	Base() : parent_s{ "ê¸°ë°˜" } { std::cout << "ê¸°ë°˜ í´ëž˜ìŠ¤\n"; }
 
 	void Print() { std::cout << parent_s << std::endl; }
 
@@ -12,10 +12,10 @@ protected:
 
 class Derived : public Base {
 public:
-	Derived() : child_s{ "ÆÄ»ý" } {
-		std::cout << "ÆÄ»ý Å¬·¡½º\n"; 
+	Derived() : child_s{ "íŒŒìƒ" } {
+		std::cout << "íŒŒìƒ í´ëž˜ìŠ¤\n"; 
 
-		parent_s = "º¯°æ";
+		parent_s = "ë³€ê²½";
 
 		Print();
 		Base::Print();

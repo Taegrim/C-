@@ -1,5 +1,14 @@
 ﻿#include "stdafx.h"
 
+// ------------------------------------------------------
+// virtual 키워드, 상속과 다형성
+// 가상함수는 런타임에 실행되는 동적 바인딩 함수
+
+// 클래스에 가상함수가 있다면 가상함수 테이블이 만들어지고
+// 해당 테이블로 어느 함수를 호출할지 런타임에 결정함
+//  -> 6-3 에 서술
+
+
 class Employee {
 public:
 	Employee(std::string name, int age, std::string position, int rank) :
@@ -9,9 +18,9 @@ public:
 
 	Employee() = default;
 
-	int CaculatePay() const { return 200 + rank * 50; }
-	
-	void PrintInfo() {
+	virtual int CaculatePay() const { return 200 + rank * 50; }
+
+	virtual void PrintInfo() {
 		std::cout << std::format("{:<6} ({:>6}, {}) ==> {} 만원\n", name, position, age, CaculatePay());
 	}
 
@@ -27,13 +36,9 @@ public:
 	Manager(std::string name, int age, std::string position, int rank, int year_of_service) :
 		Employee(name, age, position, rank), year_of_service{ year_of_service } {}
 
-	Manager(const Manager& manager) = default;
+	int CaculatePay() const override { return 200 + rank * 50 + 5 * year_of_service; }
 
-	Manager() = default;
-
-	int CaculatePay() const { return 200 + rank * 50 + 5 * year_of_service; }
-
-	void PrintInfo() {
+	void PrintInfo() override {
 		std::cout << std::format("{:<6} ({:>6}, {}, {}년차) ==> {} 만원\n",
 			name, position, age, year_of_service, CaculatePay());
 	}
@@ -44,24 +49,15 @@ private:
 
 class EmployeeList {
 public:
-	EmployeeList(int alloc_employee) : alloc_employee{ alloc_employee }
-		, alloc_manager{ alloc_employee } 
-	{
+	EmployeeList(int alloc_employee) : alloc_employee{ alloc_employee }{
 		employee_list = new Employee* [alloc_employee];
 		current_employee = 0;
-
-		manager_list = new Manager* [alloc_manager];
-		current_manager = 0;
 	}
 
 	~EmployeeList() {
 		for (int i = 0; i < current_employee; ++i)
 			delete employee_list[i];
 		delete[] employee_list;
-
-		for (int i = 0; i < current_manager; ++i)
-			delete manager_list[i];
-		delete[] manager_list;
 	}
 
 	void AddEmployee(Employee* employee) {
@@ -81,36 +77,15 @@ public:
 		++current_employee;
 	}
 
-	void AddManager(Manager* manager) {
-		if (current_manager >= alloc_manager) {
-			alloc_manager *= 2;
-
-			Manager** temp = new Manager* [alloc_manager];
-			for (int i = 0; i < current_manager; ++i)
-				temp[i] = manager_list[i];
-
-			delete[] manager_list;
-			manager_list = temp;
-		}
-		
-		manager_list[current_manager] = manager;
-		++current_manager;
-	}
-	
 	int CurrentEmployeeNum() const { return current_employee; }
-	int CurrentManagerNum() const { return current_manager; }
-	
+
 	friend std::ostream& operator<<(std::ostream& os, const EmployeeList& el);
 
 private:
 	int alloc_employee;
-	int alloc_manager;
 
 	int current_employee;
 	Employee** employee_list;
-
-	int current_manager;
-	Manager** manager_list;
 };
 
 
@@ -122,23 +97,18 @@ std::ostream& operator<<(std::ostream& os, const EmployeeList& el)
 		total_pay += el.employee_list[i]->CaculatePay();
 	}
 
-	for (int i = 0; i < el.current_manager; ++i) {
-		el.manager_list[i]->PrintInfo();
-		total_pay += el.manager_list[i]->CaculatePay();
-	}
-
 	os << "총 비용 : " << total_pay << "만원\n";
 	return os;
 }
 
 int main()
 {
-	EmployeeList emp_list{ 3 };
+	EmployeeList emp_list{ 4 };
 	emp_list.AddEmployee(new Employee("노홍철", 34, "평사원", 1));
 	emp_list.AddEmployee(new Employee("하하", 34, "평사원", 1));
-	emp_list.AddManager(new Manager("유재석", 41, "부장", 7, 12));
-	emp_list.AddManager(new Manager("정준하", 43, "과장", 4, 15));
-	emp_list.AddManager(new Manager("박명수", 43, "차장", 5, 13));
+	emp_list.AddEmployee(new Manager("유재석", 41, "부장", 7, 12));
+	emp_list.AddEmployee(new Manager("정준하", 43, "과장", 4, 15));
+	emp_list.AddEmployee(new Manager("박명수", 43, "차장", 5, 13));
 	emp_list.AddEmployee(new Employee("정형돈", 36, "대리", 2));
 	emp_list.AddEmployee(new Employee("길", 36, "인턴", -2));
 
