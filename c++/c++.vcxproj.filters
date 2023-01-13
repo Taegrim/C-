@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\9.">
       <UniqueIdentifier>{2add0571-7dbc-4bee-bc9e-0549a56612ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\10.">
+      <UniqueIdentifier>{85ed9c71-8b92-4970-9a84-cd61294a06f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1-2.cpp">
@@ -131,6 +134,9 @@
     </ClCompile>
     <ClCompile Include="9-2-2.cpp">
       <Filter>소스 파일\9.</Filter>
+    </ClCompile>
+    <ClCompile Include="10-1.cpp">
+      <Filter>소스 파일\10.</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
