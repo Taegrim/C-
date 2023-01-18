@@ -156,6 +156,15 @@
     <ClCompile Include="10-3-3.cpp">
       <Filter>소스 파일\10.</Filter>
     </ClCompile>
+    <ClCompile Include="10-4-0.cpp">
+      <Filter>소스 파일\10.</Filter>
+    </ClCompile>
+    <ClCompile Include="10-4-1.cpp">
+      <Filter>소스 파일\10.</Filter>
+    </ClCompile>
+    <ClCompile Include="10-4-2.cpp">
+      <Filter>소스 파일\10.</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
