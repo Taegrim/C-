@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\11.">
       <UniqueIdentifier>{677cb1ca-a96e-4b7c-8519-28c4ba15723c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\12.">
+      <UniqueIdentifier>{03b479f0-4bc2-4d27-ae20-a64f5d5f5717}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1-2.cpp">
@@ -173,6 +176,12 @@
     </ClCompile>
     <ClCompile Include="11-1.cpp">
       <Filter>소스 파일\11.</Filter>
+    </ClCompile>
+    <ClCompile Include="12-1-1.cpp">
+      <Filter>소스 파일\12.</Filter>
+    </ClCompile>
+    <ClCompile Include="12-1-0.cpp">
+      <Filter>소스 파일\12.</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
