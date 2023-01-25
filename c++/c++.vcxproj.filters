@@ -183,6 +183,12 @@
     <ClCompile Include="12-1-0.cpp">
       <Filter>소스 파일\12.</Filter>
     </ClCompile>
+    <ClCompile Include="12-2-1.cpp">
+      <Filter>소스 파일\12.</Filter>
+    </ClCompile>
+    <ClCompile Include="12-2-2.cpp">
+      <Filter>소스 파일\12.</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
