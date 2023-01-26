@@ -189,6 +189,9 @@
     <ClCompile Include="12-2-2.cpp">
       <Filter>소스 파일\12.</Filter>
     </ClCompile>
+    <ClCompile Include="12-2-3.cpp">
+      <Filter>소스 파일\12.</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
