@@ -219,6 +219,15 @@
     <ClCompile Include="15-1-2.cpp">
       <Filter>소스 파일\15.</Filter>
     </ClCompile>
+    <ClCompile Include="15-2-1.cpp">
+      <Filter>소스 파일\15.</Filter>
+    </ClCompile>
+    <ClCompile Include="15-2-2.cpp">
+      <Filter>소스 파일\15.</Filter>
+    </ClCompile>
+    <ClCompile Include="15-2-3.cpp">
+      <Filter>소스 파일\15.</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
